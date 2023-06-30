@@ -1,0 +1,26 @@
+<div class="row">
+    <h2> Agenda Telefónica</h2>
+</div>
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th> #</th>
+            <th> Nombre Contacto </th>
+            <th> Teléfono</th>
+            <th> Fecha y hora de registro </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let agenda of agendas">
+            <td> {{ agenda.id }} </td>
+            <td> {{ agenda.nombreContacto }} </td>
+            <td> {{ agenda.telefono }} </td>
+            <td>
+                <button (click)="actualizarAgenda(agenda.id)" class="btn btn-primary"> Actualizar</button>
+                <button (click)="eliminarAgenda(agenda.id)" class="btn btn-danger" style="margin-left: 10px"> Eliminar</button>
+                <button (click)="agendaDetalles(agenda.id)" class="btn btn-primary" style="margin-left: 10px"> Detalles</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
